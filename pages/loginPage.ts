@@ -55,4 +55,8 @@ export class LoginPage {
     await expect(this.page).not.toHaveURL("https://platform-staging.vas.com/login?redirect=%2F");
     await expect(this.signInButton).toHaveCount(0);
   }
+
+  async assertNotOnLoginPage(): Promise<void> {
+    await this.assertLoggedIn();
+  }
 }
